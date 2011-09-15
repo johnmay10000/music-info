@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		334255931420CF72003F0571 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255921420CF72003F0571 /* UIKit.framework */; };
+		334255951420CF72003F0571 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255941420CF72003F0571 /* Foundation.framework */; };
+		334255971420CF72003F0571 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255961420CF72003F0571 /* CoreGraphics.framework */; };
+		3342559D1420CF72003F0571 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3342559B1420CF72003F0571 /* InfoPlist.strings */; };
+		3342559F1420CF72003F0571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3342559E1420CF72003F0571 /* main.m */; };
+		334255A31420CF72003F0571 /* MIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 334255A21420CF72003F0571 /* MIAppDelegate.m */; };
+		334255A61420CF72003F0571 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334255A41420CF72003F0571 /* MainStoryboard_iPhone.storyboard */; };
+		334255A91420CF72003F0571 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334255A71420CF72003F0571 /* MainStoryboard_iPad.storyboard */; };
+		334255AC1420CF72003F0571 /* MIFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334255AB1420CF72003F0571 /* MIFirstViewController.m */; };
+		334255AE1420CF72003F0571 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 334255AD1420CF72003F0571 /* first.png */; };
+		334255B01420CF72003F0571 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 334255AF1420CF72003F0571 /* first@2x.png */; };
+		334255B31420CF72003F0571 /* MISecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334255B21420CF72003F0571 /* MISecondViewController.m */; };
+		334255B51420CF72003F0571 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 334255B41420CF72003F0571 /* second.png */; };
+		334255B71420CF72003F0571 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 334255B61420CF72003F0571 /* second@2x.png */; };
+		334255BF1420CF72003F0571 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255BE1420CF72003F0571 /* SenTestingKit.framework */; };
+		334255C01420CF72003F0571 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255921420CF72003F0571 /* UIKit.framework */; };
+		334255C11420CF72003F0571 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255941420CF72003F0571 /* Foundation.framework */; };
+		334255C91420CF72003F0571 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 334255C71420CF72003F0571 /* InfoPlist.strings */; };
+		334255CC1420CF72003F0571 /* MusicInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334255CB1420CF72003F0571 /* MusicInfoTests.m */; };
+		334255E41420D464003F0571 /* DepsOnly.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 334255DA1420D464003F0571 /* DepsOnly.xcconfig */; };
+		334255E51420D464003F0571 /* DepsOnly.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 334255DA1420D464003F0571 /* DepsOnly.xcconfig */; };
+		334255E61420D464003F0571 /* Kit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 334255DB1420D464003F0571 /* Kit.xcconfig */; };
+		334255E71420D464003F0571 /* Kit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 334255DB1420D464003F0571 /* Kit.xcconfig */; };
+		334255E81420D464003F0571 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 334255DF1420D464003F0571 /* Makefile */; };
+		334255E91420D464003F0571 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 334255DF1420D464003F0571 /* Makefile */; };
+		334255F31420D565003F0571 /* libKitDeps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255ED1420D465003F0571 /* libKitDeps.a */; };
+		334255FD1420D6F5003F0571 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		334255C21420CF72003F0571 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 334255851420CF72003F0571 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3342558D1420CF72003F0571;
+			remoteInfo = MusicInfo;
+		};
+		334255EC1420D465003F0571 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 334255DC1420D464003F0571 /* KitDeps.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = KitDeps;
+		};
+		334255EF1420D514003F0571 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 334255DC1420D464003F0571 /* KitDeps.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = KitDeps;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3342558E1420CF72003F0571 /* MusicInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		334255921420CF72003F0571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		334255941420CF72003F0571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		334255961420CF72003F0571 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3342559A1420CF72003F0571 /* MusicInfo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicInfo-Info.plist"; sourceTree = "<group>"; };
+		3342559C1420CF72003F0571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3342559E1420CF72003F0571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		334255A01420CF72003F0571 /* MusicInfo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicInfo-Prefix.pch"; sourceTree = "<group>"; };
+		334255A11420CF72003F0571 /* MIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAppDelegate.h; sourceTree = "<group>"; };
+		334255A21420CF72003F0571 /* MIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAppDelegate.m; sourceTree = "<group>"; };
+		334255A51420CF72003F0571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		334255A81420CF72003F0571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		334255AA1420CF72003F0571 /* MIFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIFirstViewController.h; sourceTree = "<group>"; };
+		334255AB1420CF72003F0571 /* MIFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIFirstViewController.m; sourceTree = "<group>"; };
+		334255AD1420CF72003F0571 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		334255AF1420CF72003F0571 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		334255B11420CF72003F0571 /* MISecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MISecondViewController.h; sourceTree = "<group>"; };
+		334255B21420CF72003F0571 /* MISecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MISecondViewController.m; sourceTree = "<group>"; };
+		334255B41420CF72003F0571 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		334255B61420CF72003F0571 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		334255BD1420CF72003F0571 /* MusicInfoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicInfoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		334255BE1420CF72003F0571 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		334255C61420CF72003F0571 /* MusicInfoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicInfoTests-Info.plist"; sourceTree = "<group>"; };
+		334255C81420CF72003F0571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		334255CA1420CF72003F0571 /* MusicInfoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicInfoTests.h; sourceTree = "<group>"; };
+		334255CB1420CF72003F0571 /* MusicInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicInfoTests.m; sourceTree = "<group>"; };
+		334255DA1420D464003F0571 /* DepsOnly.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DepsOnly.xcconfig; sourceTree = "<group>"; };
+		334255DB1420D464003F0571 /* Kit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Kit.xcconfig; sourceTree = "<group>"; };
+		334255DC1420D464003F0571 /* KitDeps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KitDeps.xcodeproj; sourceTree = "<group>"; };
+		334255DF1420D464003F0571 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		334255E01420D464003F0571 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3342558B1420CF72003F0571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334255FD1420D6F5003F0571 /* libz.1.1.3.dylib in Frameworks */,
+				334255F31420D565003F0571 /* libKitDeps.a in Frameworks */,
+				334255931420CF72003F0571 /* UIKit.framework in Frameworks */,
+				334255951420CF72003F0571 /* Foundation.framework in Frameworks */,
+				334255971420CF72003F0571 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334255B91420CF72003F0571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334255BF1420CF72003F0571 /* SenTestingKit.framework in Frameworks */,
+				334255C01420CF72003F0571 /* UIKit.framework in Frameworks */,
+				334255C11420CF72003F0571 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		334255831420CF72003F0571 = {
+			isa = PBXGroup;
+			children = (
+				334255D91420D464003F0571 /* Kits */,
+				334255981420CF72003F0571 /* MusicInfo */,
+				334255C41420CF72003F0571 /* MusicInfoTests */,
+				334255911420CF72003F0571 /* Frameworks */,
+				3342558F1420CF72003F0571 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3342558F1420CF72003F0571 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3342558E1420CF72003F0571 /* MusicInfo.app */,
+				334255BD1420CF72003F0571 /* MusicInfoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		334255911420CF72003F0571 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */,
+				334255921420CF72003F0571 /* UIKit.framework */,
+				334255941420CF72003F0571 /* Foundation.framework */,
+				334255961420CF72003F0571 /* CoreGraphics.framework */,
+				334255BE1420CF72003F0571 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		334255981420CF72003F0571 /* MusicInfo */ = {
+			isa = PBXGroup;
+			children = (
+				334255A11420CF72003F0571 /* MIAppDelegate.h */,
+				334255A21420CF72003F0571 /* MIAppDelegate.m */,
+				334255A41420CF72003F0571 /* MainStoryboard_iPhone.storyboard */,
+				334255A71420CF72003F0571 /* MainStoryboard_iPad.storyboard */,
+				334255AA1420CF72003F0571 /* MIFirstViewController.h */,
+				334255AB1420CF72003F0571 /* MIFirstViewController.m */,
+				334255AD1420CF72003F0571 /* first.png */,
+				334255AF1420CF72003F0571 /* first@2x.png */,
+				334255B11420CF72003F0571 /* MISecondViewController.h */,
+				334255B21420CF72003F0571 /* MISecondViewController.m */,
+				334255B41420CF72003F0571 /* second.png */,
+				334255B61420CF72003F0571 /* second@2x.png */,
+				334255991420CF72003F0571 /* Supporting Files */,
+			);
+			path = MusicInfo;
+			sourceTree = "<group>";
+		};
+		334255991420CF72003F0571 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3342559A1420CF72003F0571 /* MusicInfo-Info.plist */,
+				3342559B1420CF72003F0571 /* InfoPlist.strings */,
+				3342559E1420CF72003F0571 /* main.m */,
+				334255A01420CF72003F0571 /* MusicInfo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		334255C41420CF72003F0571 /* MusicInfoTests */ = {
+			isa = PBXGroup;
+			children = (
+				334255CA1420CF72003F0571 /* MusicInfoTests.h */,
+				334255CB1420CF72003F0571 /* MusicInfoTests.m */,
+				334255C51420CF72003F0571 /* Supporting Files */,
+			);
+			path = MusicInfoTests;
+			sourceTree = "<group>";
+		};
+		334255C51420CF72003F0571 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				334255C61420CF72003F0571 /* MusicInfoTests-Info.plist */,
+				334255C71420CF72003F0571 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		334255D91420D464003F0571 /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				334255DA1420D464003F0571 /* DepsOnly.xcconfig */,
+				334255DB1420D464003F0571 /* Kit.xcconfig */,
+				334255DC1420D464003F0571 /* KitDeps.xcodeproj */,
+				334255DF1420D464003F0571 /* Makefile */,
+				334255E01420D464003F0571 /* Prefix.pch */,
+			);
+			path = Kits;
+			sourceTree = "<group>";
+		};
+		334255DD1420D464003F0571 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				334255ED1420D465003F0571 /* libKitDeps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3342558D1420CF72003F0571 /* MusicInfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 334255CF1420CF72003F0571 /* Build configuration list for PBXNativeTarget "MusicInfo" */;
+			buildPhases = (
+				3342558A1420CF72003F0571 /* Sources */,
+				3342558B1420CF72003F0571 /* Frameworks */,
+				3342558C1420CF72003F0571 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				334255F01420D514003F0571 /* PBXTargetDependency */,
+			);
+			name = MusicInfo;
+			productName = MusicInfo;
+			productReference = 3342558E1420CF72003F0571 /* MusicInfo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		334255BC1420CF72003F0571 /* MusicInfoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 334255D21420CF72003F0571 /* Build configuration list for PBXNativeTarget "MusicInfoTests" */;
+			buildPhases = (
+				334255B81420CF72003F0571 /* Sources */,
+				334255B91420CF72003F0571 /* Frameworks */,
+				334255BA1420CF72003F0571 /* Resources */,
+				334255BB1420CF72003F0571 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				334255C31420CF72003F0571 /* PBXTargetDependency */,
+			);
+			name = MusicInfoTests;
+			productName = MusicInfoTests;
+			productReference = 334255BD1420CF72003F0571 /* MusicInfoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		334255851420CF72003F0571 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "John May";
+			};
+			buildConfigurationList = 334255881420CF72003F0571 /* Build configuration list for PBXProject "MusicInfo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 334255831420CF72003F0571;
+			productRefGroup = 3342558F1420CF72003F0571 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 334255DD1420D464003F0571 /* Products */;
+					ProjectRef = 334255DC1420D464003F0571 /* KitDeps.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3342558D1420CF72003F0571 /* MusicInfo */,
+				334255BC1420CF72003F0571 /* MusicInfoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		334255ED1420D465003F0571 /* libKitDeps.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKitDeps.a;
+			remoteRef = 334255EC1420D465003F0571 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3342558C1420CF72003F0571 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3342559D1420CF72003F0571 /* InfoPlist.strings in Resources */,
+				334255A61420CF72003F0571 /* MainStoryboard_iPhone.storyboard in Resources */,
+				334255A91420CF72003F0571 /* MainStoryboard_iPad.storyboard in Resources */,
+				334255AE1420CF72003F0571 /* first.png in Resources */,
+				334255B01420CF72003F0571 /* first@2x.png in Resources */,
+				334255B51420CF72003F0571 /* second.png in Resources */,
+				334255B71420CF72003F0571 /* second@2x.png in Resources */,
+				334255E41420D464003F0571 /* DepsOnly.xcconfig in Resources */,
+				334255E61420D464003F0571 /* Kit.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334255BA1420CF72003F0571 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334255C91420CF72003F0571 /* InfoPlist.strings in Resources */,
+				334255E51420D464003F0571 /* DepsOnly.xcconfig in Resources */,
+				334255E71420D464003F0571 /* Kit.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		334255BB1420CF72003F0571 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3342558A1420CF72003F0571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3342559F1420CF72003F0571 /* main.m in Sources */,
+				334255A31420CF72003F0571 /* MIAppDelegate.m in Sources */,
+				334255AC1420CF72003F0571 /* MIFirstViewController.m in Sources */,
+				334255B31420CF72003F0571 /* MISecondViewController.m in Sources */,
+				334255E81420D464003F0571 /* Makefile in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		334255B81420CF72003F0571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				334255CC1420CF72003F0571 /* MusicInfoTests.m in Sources */,
+				334255E91420D464003F0571 /* Makefile in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		334255C31420CF72003F0571 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3342558D1420CF72003F0571 /* MusicInfo */;
+			targetProxy = 334255C21420CF72003F0571 /* PBXContainerItemProxy */;
+		};
+		334255F01420D514003F0571 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KitDeps;
+			targetProxy = 334255EF1420D514003F0571 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3342559B1420CF72003F0571 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3342559C1420CF72003F0571 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		334255A41420CF72003F0571 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				334255A51420CF72003F0571 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		334255A71420CF72003F0571 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				334255A81420CF72003F0571 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		334255C71420CF72003F0571 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				334255C81420CF72003F0571 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		334255CD1420CF72003F0571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334255DB1420D464003F0571 /* Kit.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		334255CE1420CF72003F0571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334255DB1420D464003F0571 /* Kit.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		334255D01420CF72003F0571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				INFOPLIST_FILE = "MusicInfo/MusicInfo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		334255D11420CF72003F0571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				INFOPLIST_FILE = "MusicInfo/MusicInfo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		334255D31420CF72003F0571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicInfo.app/MusicInfo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				INFOPLIST_FILE = "MusicInfoTests/MusicInfoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		334255D41420CF72003F0571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicInfo.app/MusicInfo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				INFOPLIST_FILE = "MusicInfoTests/MusicInfoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		334255881420CF72003F0571 /* Build configuration list for PBXProject "MusicInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334255CD1420CF72003F0571 /* Debug */,
+				334255CE1420CF72003F0571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		334255CF1420CF72003F0571 /* Build configuration list for PBXNativeTarget "MusicInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334255D01420CF72003F0571 /* Debug */,
+				334255D11420CF72003F0571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		334255D21420CF72003F0571 /* Build configuration list for PBXNativeTarget "MusicInfoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				334255D31420CF72003F0571 /* Debug */,
+				334255D41420CF72003F0571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 334255851420CF72003F0571 /* Project object */;
+}

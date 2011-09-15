@@ -1,0 +1,8 @@
+dependencies: 
+  - phoenix: 1.6.18
+  - zipkit: 1.0.3
+  - ego-image: 1.0.2
+
+name: MusicInfo
+version: 1.0.0
+
