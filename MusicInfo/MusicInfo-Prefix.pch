@@ -17,4 +17,5 @@
     #import <FK/FKPrelude.h>
     #import <PX/PXPrelude.h>
     #import <QuartzCore/QuartzCore.h>
+    #import <MKNetworkKit.h>
 #endif

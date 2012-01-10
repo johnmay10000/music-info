@@ -15,6 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    MISession *session = [[MISession alloc] init];
+    
+    [session start];
+    
     return YES;
 }
 							
