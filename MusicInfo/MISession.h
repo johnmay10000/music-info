@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class MIDiscogsApi;
+
 @interface MISession : NSObject
 
-@property (nonatomic, strong) MIDiscogsApi *discogsApi
+@property (nonatomic, strong) MIDiscogsApi *discogsApi;
 -(void)start;
+-(void)search:(NSString *)searchString;
 @end

@@ -18,7 +18,7 @@
     MISession *session = [[MISession alloc] init];
     
     [session start];
-    
+    [session search:@"slayer"];
     return YES;
 }
 							

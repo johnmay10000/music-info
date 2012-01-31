@@ -10,7 +10,7 @@
 #import "MKNetworkEngine.h"
 
 @interface MIDiscogsApi : MKNetworkEngine
-typedef void (^DiscogArtistResponseBlock)(NSArray artistList);
+typedef void (^DiscogArtistResponseBlock)(NSArray *artistList);
 
 -(MKNetworkOperation*) searchForArtist:(NSString *)artistName 
                           onCompletion:(DiscogArtistResponseBlock) completion

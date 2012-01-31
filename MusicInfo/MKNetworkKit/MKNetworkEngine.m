@@ -57,6 +57,7 @@ static NSOperationQueue *_sharedNetworkQueue;
 @synthesize memoryCacheKeys = _memoryCacheKeys;
 @synthesize cacheInvalidationParams = _cacheInvalidationParams;
 
+@synthesize reachabilityChangedHandler = _reachabilityChangedHandler;
 
 // Network Queue is a shared singleton object.
 // no matter how many instances of MKNetworkEngine is created, there is one and only one network queue
@@ -133,7 +134,9 @@ static NSOperationQueue *_sharedNetworkQueue;
                          change:(NSDictionary *)change context:(void *)context
 {
     if (object == _sharedNetworkQueue && [keyPath isEqualToString:@"operationCount"]) {
-        
+       
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMKNetworkEngineOperationCountChanged 
+                                                            object:[NSNumber numberWithInteger:[_sharedNetworkQueue operationCount]]];
 #if TARGET_OS_IPHONE
         [UIApplication sharedApplication].networkActivityIndicatorVisible = 
         ([_sharedNetworkQueue.operations count] > 0);        
@@ -167,10 +170,14 @@ static NSOperationQueue *_sharedNetworkQueue;
     {
         DLog(@"Server [%@] is not reachable", self.hostName);        
         [self freezeOperations];
-    }        
+    }   
+    
+    if(self.reachabilityChangedHandler) {
+        self.reachabilityChangedHandler([self.reachability currentReachabilityStatus]);
+    }
 }
 
-#pragma Freezing operations (Called when network connectivity fails)
+#pragma mark Freezing operations (Called when network connectivity fails)
 -(void) freezeOperations {
     
     if(![self isCacheEnabled]) return;
@@ -228,8 +235,8 @@ static NSOperationQueue *_sharedNetworkQueue;
     return ([self.reachability currentReachabilityStatus] != NotReachable);
 }
 
-#pragma -
-#pragma Create methods
+#pragma mark -
+#pragma mark Create methods
 
 -(MKNetworkOperation*) operationWithPath:(NSString*) path {
     
@@ -297,7 +304,7 @@ static NSOperationQueue *_sharedNetworkQueue;
     
     if([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         
-        NSData *cachedData = [NSData dataWithContentsOfFile:filePath];
+        cachedData = [NSData dataWithContentsOfFile:filePath];
         [self saveCacheData:cachedData forKey:[operation uniqueIdentifier]]; // bring it back to the in-memory cache
         return cachedData;
     }
@@ -387,8 +394,8 @@ static NSOperationQueue *_sharedNetworkQueue;
     [self enqueueOperation:op];
 }
 
-#pragma -
-#pragma Cache related
+#pragma mark -
+#pragma mark Cache related
 
 -(NSString*) cacheDirectoryName {
     
