@@ -9,7 +9,7 @@
 #import "MISoundcloudApi.h"
 #import "JSONKit.h"
 
-#define DISCOGS_DB_URL(__C1__, __C2__) [NSString stringWithFormat:@"/database/search?q=%@&type=%@", __C1__, __C2__]
+#define SOUNDCLOUD_TRACKS_URL(__C1__, __C2__,__C3__) [NSString stringWithFormat:@"tracks.json?client_id=%@&q=%@&limit=10", __C1__, __C2__, __C3__]
 
 @implementation MISoundcloudApi
 -(MKNetworkOperation*) searchFor:(NSString *)searchParam
@@ -17,7 +17,7 @@
                     onCompletion:(SoundcloudSearchResponseBlock)completionBlock
                          onError:(MKNKErrorBlock) errorBlock {
     
-    MKNetworkOperation *op = [self operationWithPath:DISCOGS_DB_URL(searchParam, searchType) 
+    MKNetworkOperation *op = [self operationWithPath:SOUNDCLOUD_TRACKS_URL(@"CLIENT_ID",searchParam, searchType) 
                                               params:nil 
                                           httpMethod:@"GET"];
     
@@ -40,12 +40,9 @@
          }
          else {
              //             DLog(@"Data from server %@", [completedOperation responseString]);
-         }
-         
-         completionBlock(results);
-         
-     } onError:^(NSError* error) {
-         
+         }         
+         completionBlock(results);         
+     } onError:^(NSError* error) {         
          errorBlock(error);
      }];
     
