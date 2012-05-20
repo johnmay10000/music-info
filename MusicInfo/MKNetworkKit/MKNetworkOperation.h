@@ -26,9 +26,9 @@
 @class MKNetworkOperation;
 
 typedef enum {
-    MKNetworkOperationStateReady = 1,
-    MKNetworkOperationStateExecuting = 2,
-    MKNetworkOperationStateFinished = 3
+  MKNetworkOperationStateReady = 1,
+  MKNetworkOperationStateExecuting = 2,
+  MKNetworkOperationStateFinished = 3
 } MKNetworkOperationState;
 
 typedef void (^MKNKProgressBlock)(double progress);
@@ -45,10 +45,11 @@ typedef void (^MKNKAuthBlock)(NSURLAuthenticationChallenge* challenge);
 typedef NSString* (^MKNKEncodingBlock) (NSDictionary* postDataDict);
 
 typedef enum {
-    
-    MKNKPostDataEncodingTypeURL = 0, // default
-    MKNKPostDataEncodingTypeJSON,
-    MKNKPostDataEncodingTypePlist,
+  
+  MKNKPostDataEncodingTypeURL = 0, // default
+  MKNKPostDataEncodingTypeJSON,
+  MKNKPostDataEncodingTypePlist,
+  MKNKPostDataEncodingTypeCustom
 } MKNKPostDataEncodingType;
 /*!
  @header MKNetworkOperation.h
@@ -67,10 +68,11 @@ typedef enum {
  *  Freezable operations are serialized when network connectivity is lost and performed when connection is restored
  */
 @interface MKNetworkOperation : NSOperation {
-    
-    @private
-    int _state;
-    BOOL _freezable;
+  
+@private
+  int _state;
+  BOOL _freezable;
+  MKNKPostDataEncodingType _postDataEncoding;
 }
 
 /*!
@@ -257,14 +259,47 @@ typedef enum {
 
 /*!
  *  @abstract Handler that you implement to monitor reachability changes
- *  @property reachabilityChangedHandler
+ *  @property operationStateChangedHandler
  *  
  *  @discussion
- *	The framework calls this handler whenever the reachability of the host changes.
- *  The default implementation freezes the queued operations and stops network activity
- *  You normally don't have to implement this unless you need to show a HUD notifying the user of connectivity loss
+ *	The framework calls this handler whenever the operation state changes
  */
 @property (copy, nonatomic) void (^operationStateChangedHandler)(MKNetworkOperationState newState);
+
+/*!
+ *  @abstract controls persistence of authentication credentials
+ *  @property credentialPersistence
+ *  
+ *  @discussion
+ *  The default value is set to NSURLCredentialPersistenceForSession, change it to NSURLCredentialPersistenceNone to avoid caching issues (isse #35)
+ */
+@property (nonatomic, assign) NSURLCredentialPersistence credentialPersistence;
+#if TARGET_OS_IPHONE
+
+/*!
+ *  @abstract notification that has to be shown when an error occurs and the app is in background
+ *  @property localNotification
+ *  
+ *  @discussion
+ *  The default value nil. No notification is shown when an error occurs.
+ *  To show a notification when the app is in background and the network operation running in background fails,
+ *  set this parameter to a UILocalNotification object
+ */
+@property (nonatomic, strong) UILocalNotification *localNotification;
+/*!
+ *  @abstract Shows a local notification when an error occurs
+ *  @property shouldShowLocalNotificationOnError
+ *  
+ *  @discussion
+ *  The default value NO. No notification is shown when an error occurs.
+ *  When set to YES, MKNetworkKit shows the NSError localizedDescription text as a notification when the app is in background and the network operation ended in error.
+ *  To customize the local notification text, use the property localNotification
+ 
+ *  @seealso
+ *  localNotification
+ */
+@property (nonatomic, assign) BOOL shouldShowLocalNotificationOnError;
+#endif
 
 /*!
  *  @abstract Add additional header parameters
@@ -275,6 +310,25 @@ typedef enum {
  *  On specific cases where you need to set a new header parameter for just a single API call, you can use this
  */
 -(void) addHeaders:(NSDictionary*) headersDictionary;
+
+/*!
+ *  @abstract Sets the authorization header after prefixing it with a given auth type
+ *  
+ *  @discussion
+ *	If you need to set the HTTP Authorization header, you can use this convinience method.
+ *  This method internally calls addHeaders:
+ *  The authType parameter is a string that you can prefix to your auth token to tell your server what kind of authentication scheme you want to use. HTTP Basic Authentication uses the string "Basic" for authType
+ *  To use HTTP Basic Authentication, consider using the method setUsername:password:basicAuth: instead.
+ *
+ *  Example
+ *  [op setToken:@"abracadabra" forAuthType:@"Token"] will set the header value to 
+ *  "Authorization: Token abracadabra"
+ 
+ *  @seealso
+ *  setUsername:password:basicAuth:
+ *  addHeaders:
+ */
+-(void) setAuthorizationHeaderValue:(NSString*) token forAuthType:(NSString*) authType;
 
 /*!
  *  @abstract Attaches a file to the request
@@ -316,7 +370,7 @@ typedef enum {
  *  The method has a side effect. It changes the HTTPMethod to "POST" regardless of what it was before.
  *  It also changes the post format to multipart/form-data
  */
--(void) addData:(NSData*) data forKey:(NSString*) key mimeType:(NSString*) mimeType;
+-(void) addData:(NSData*) data forKey:(NSString*) key mimeType:(NSString*) mimeType fileName:(NSString*) fileName;
 
 /*!
  *  @abstract Block Handler for completion and error
@@ -480,6 +534,7 @@ typedef enum {
 
 // internal methods called by MKNetworkEngine only.
 // Don't touch
+-(BOOL) isCacheable;
 -(void) setCachedData:(NSData*) cachedData;
 -(void) setCacheHandler:(MKNKResponseBlock) cacheHandler;
 -(void) updateHandlersFromOperation:(MKNetworkOperation*) operation;

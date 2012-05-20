@@ -1,5 +1,5 @@
 //
-//  UIAlertView+MKNetworkKitAdditions.m
+//  NSAlert+MKNetworkKitAdditions.m
 //  MKNetworkKitDemo
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
@@ -22,19 +22,17 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-#if TARGET_OS_IPHONE
-#import "UIAlertView+MKNetworkKitAdditions.h"
+#if !TARGET_OS_IPHONE
+#import "NSAlert+MKNetworkKitAdditions.h"
 
-@implementation UIAlertView (MKNetworkKitAdditions)
+@implementation NSAlert (MKNetworkKitAdditions)
 
-+(UIAlertView*) showWithError:(NSError*) networkError {
++(NSAlert*) showWithError:(NSError*) networkError {
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[networkError localizedDescription]
-                                                    message:[networkError localizedRecoverySuggestion]
-                                                   delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"Dismiss", @"")
-                                          otherButtonTitles:nil];
-    [alert show];
+    DLog(@"%@", [networkError userInfo]);
+    
+    NSAlert *alert = [NSAlert alertWithError:networkError];
+    [alert runModal];
     return alert;
 }
 @end

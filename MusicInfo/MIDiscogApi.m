@@ -28,10 +28,15 @@
         NSString *response = [completedOperation responseString];
         __unused NSDictionary *resultsDictionary = [response objectFromJSONString];
         __unused NSDictionary *pagination = [resultsDictionary objectForKey:@"pagination"];
-        __unused NSDictionary *results = [resultsDictionary objectForKey:@"results"];
+        __unused NSArray *results = [resultsDictionary objectForKey:@"results"];
 //         __unused NSArray *a = [[completedOperation responseString] componentsSeparatedByString:@","];
 //         NSString *valueString = [[[completedOperation responseString] componentsSeparatedByString:@","] objectAtIndex:1];
 //         NSLog(@"%@", valueString);
+         
+         for (NSDictionary *result in results) {
+             NSLog(@"%@", [result valueForKey:@"resource_url"]);
+             NSLog(@"%@", [result valueForKey:@"style"]);
+         }
          
          if([completedOperation isCachedResponse]) {
              //DLog(@"Data from cache %@", [completedOperation responseString]);
@@ -40,7 +45,7 @@
              //DLog(@"Data from server %@", [completedOperation responseString]);
          }
          
-         completionBlock([NSArray array]);
+         completionBlock(results);
          
      } onError:^(NSError* error) {
          

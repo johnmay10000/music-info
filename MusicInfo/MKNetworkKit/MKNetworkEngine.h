@@ -23,8 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import "MKNetworkOperation.h"
-
+#import "MKNetworkKit.h"
 /*!
  @header MKNetworkEngine.h
  @abstract   Represents a subclassable Network Engine for your app
@@ -43,6 +42,17 @@
 @interface MKNetworkEngine : NSObject
 
 /*!
+ *  @abstract Initializes your network engine with a hostname
+ *  
+ *  @discussion
+ *	Creates an engine for a given host name
+ *  The hostname parameter is optional
+ *  The hostname, if not null, initializes a Reachability notifier.
+ *  Network reachability notifications are automatically taken care of by MKNetworkEngine
+ *  
+ */
+- (id) initWithHostName:(NSString*) hostName;
+/*!
  *  @abstract Initializes your network engine with a hostname and custom header fields
  *  
  *  @discussion
@@ -55,6 +65,19 @@
  */
 - (id) initWithHostName:(NSString*) hostName customHeaderFields:(NSDictionary*) headers;
 
+/*!
+ *  @abstract Initializes your network engine with a hostname
+ *  
+ *  @discussion
+ *	Creates an engine for a given host name
+ *  The hostname parameter is optional
+ *  The apiPath paramter is optional
+ *  The apiPath is prefixed to every call to operationWithPath: You can use this method if your server's API location is not at the root (/)
+ *  The hostname, if not null, initializes a Reachability notifier.
+ *  Network reachability notifications are automatically taken care of by MKNetworkEngine
+ *  
+ */
+- (id) initWithHostName:(NSString*) hostName apiPath:(NSString*) apiPath customHeaderFields:(NSDictionary*) headers;
 /*!
  *  @abstract Creates a simple GET Operation with a request URL
  *  
@@ -174,7 +197,7 @@
  *  The hostname of the engine is *NOT* prefixed.
  *  The image is returned to the caller via MKNKImageBlock callback block. 
  */
-- (void)imageAtURL:(NSURL *)url onCompletion:(MKNKImageBlock) imageFetchedBlock;
+- (MKNetworkOperation*)imageAtURL:(NSURL *)url onCompletion:(MKNKImageBlock) imageFetchedBlock;
 /*!
  *  @abstract Enqueues your operation into the shared queue
  *  
@@ -209,6 +232,26 @@
 @property (readonly, strong, nonatomic) NSString *readonlyHostName;
 
 /*!
+ *  @abstract Port Number that should be used by URL creating factory methods
+ *  @property portNumber
+ *  
+ *  @discussion
+ *	Set a port number for your engine if your remote URL mandates it.
+ *  This property is optional and you DON'T have to specify the default HTTP port 80
+ */
+@property (assign, nonatomic) int portNumber;
+
+/*!
+ *  @abstract Sets an api path if it is different from root URL
+ *  @property apiPath
+ *  
+ *  @discussion
+ *	You can use this method to set a custom path to the API location if your server's API path is different from root (/) 
+ *  This property is optional
+ */
+@property (strong, nonatomic) NSString* apiPath;
+
+/*!
  *  @abstract Handler that you implement to monitor reachability changes
  *  @property reachabilityChangedHandler
  *  
@@ -219,6 +262,15 @@
  */
 @property (copy, nonatomic) void (^reachabilityChangedHandler)(NetworkStatus ns);
 
+/*!
+ *  @abstract Registers an associated operation subclass
+ *  
+ *  @discussion
+ *	When you override both MKNetworkEngine and MKNetworkOperation, you might want the engine's factory method
+ *  to prepare operations of your MKNetworkOperation subclass. To create your own MKNetworkOperation subclasses from the factory method, you can register your MKNetworkOperation subclass using this method.
+ *  This method is optional. If you don't use, factory methods in MKNetworkEngine creates MKNetworkOperation objects.
+ */
+-(void) registerOperationSubclass:(Class) aClass;
 /*!
  *  @abstract Cache Directory Name
  *  
@@ -249,4 +301,24 @@
  *  The cacheMemoryCost and cacheDirectoryName will be used when you turn caching on using this method.
  */
 -(void) useCache;
+
+/*!
+ *  @abstract Empties previously cached data
+ *  
+ *  @discussion
+ *	This method is a handy helper that you can use to clear cached data.
+ *  By default, MKNetworkKit doens't cache your requests. Use this only when you enabled caching
+ *  @seealso
+ *  useCache
+ */
+-(void) emptyCache;
+
+/*!
+ *  @abstract Checks current reachable status
+ *  
+ *  @discussion
+ *	This method is a handy helper that you can use to check for network reachability.
+ */
+-(BOOL) isReachable;
+
 @end

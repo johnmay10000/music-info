@@ -26,7 +26,7 @@
     [self.discogsApi searchForArtist:searchString 
                         onCompletion:^(NSArray *artistList){
                             for (NSString *artist in artistList){
-                                NSLog(@"%@",artist);
+                                //NSLog(@"%@",artist);
                             }
                                 
                         }
