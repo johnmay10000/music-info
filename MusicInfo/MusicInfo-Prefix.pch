@@ -19,4 +19,6 @@
     #import <QuartzCore/QuartzCore.h>
     #import "MKNetworkKit.h"
     #import "JSONKit.h"
+    #import "NSString+URLEncoding.h"
+    #import "MKNetworkEngine.h"
 #endif

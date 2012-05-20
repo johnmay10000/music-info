@@ -11,8 +11,8 @@
 @class MIDiscogsApi;
 
 @interface MISession : NSObject
-
+@property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) MIDiscogsApi *discogsApi;
 -(void)start;
--(void)search:(NSString *)searchString;
+-(void)searchFor:(NSString *)searchString withType:(NSString *)searchType;
 @end

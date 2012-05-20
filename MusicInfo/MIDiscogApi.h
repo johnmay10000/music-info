@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MKNetworkEngine.h"
+
 
 @interface MIDiscogsApi : MKNetworkEngine
-typedef void (^DiscogArtistResponseBlock)(NSArray *artistList);
+typedef void (^DiscogsSearchResponseBlock)(NSArray *resultList);
 
--(MKNetworkOperation*) searchForArtist:(NSString *)artistName 
-                          onCompletion:(DiscogArtistResponseBlock) completion
-                               onError:(MKNKErrorBlock) error;
+-(MKNetworkOperation*) searchFor:(NSString *)searchParam
+                      searchType:(NSString *)searchType
+                    onCompletion:(DiscogsSearchResponseBlock)completion
+                         onError:(MKNKErrorBlock) error;
 
 @end

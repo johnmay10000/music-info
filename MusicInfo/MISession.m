@@ -11,6 +11,7 @@
 
 @implementation MISession
 @synthesize discogsApi;
+@synthesize searchResults;
 
 -(void)start 
 {
@@ -21,14 +22,13 @@
                     customHeaderFields:headerFields];
 }
 
--(void)search:(NSString *)searchString 
+-(void)searchFor:(NSString *)searchString withType:(NSString *)searchType 
 {
-    [self.discogsApi searchForArtist:searchString 
-                        onCompletion:^(NSArray *artistList){
-                            for (NSString *artist in artistList){
-                                //NSLog(@"%@",artist);
-                            }
-                                
+    [self.discogsApi searchFor:[searchString urlEncodeUsingEncoding:NSUTF8StringEncoding]
+                    searchType:[searchType urlEncodeUsingEncoding:NSUTF8StringEncoding]
+                  onCompletion:^(NSArray *searchList){
+                      [searchResults arrayByAddingObjectsFromArray:searchList];
+                      DLog(@"%@",searchList);
                         }
                              onError:^(NSError* error) {
         
@@ -39,5 +39,4 @@
     }];   
     
 }
-
 @end

@@ -942,26 +942,26 @@
     }
     else if ((challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodClientCertificate) && self.clientCertificate) {
       
-      NSData *certData = [[NSData alloc] initWithContentsOfFile:self.clientCertificate];
+//      NSData *certData = [[NSData alloc] initWithContentsOfFile:self.clientCertificate];
       
 #warning method not implemented. Don't use client certicate authentication for now.
-      SecIdentityRef myIdentity;  // ???
-      
-      SecCertificateRef myCert = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
-      SecCertificateRef certArray[1] = { myCert };
-      CFArrayRef myCerts = CFArrayCreate(NULL, (void *)certArray, 1, NULL);
-      CFRelease(myCert);
-      NSURLCredential *credential = [NSURLCredential credentialWithIdentity:myIdentity
-                                                               certificates:(__bridge NSArray *)myCerts
-                                                                persistence:NSURLCredentialPersistencePermanent];
-      CFRelease(myCerts);
-      [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
+//      SecIdentityRef myIdentity;  // ???
+//      
+//      SecCertificateRef myCert = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
+//      SecCertificateRef certArray[1] = { myCert };
+//      CFArrayRef myCerts = CFArrayCreate(NULL, (void *)certArray, 1, NULL);
+//      CFRelease(myCert);
+//      NSURLCredential *credential = [NSURLCredential credentialWithIdentity:myIdentity
+//                                                               certificates:(__bridge NSArray *)myCerts
+//                                                                persistence:NSURLCredentialPersistencePermanent];
+//      CFRelease(myCerts);
+//      [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
     }
     else if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
 #warning method not tested. proceed at your own risk
       SecTrustRef serverTrust = [[challenge protectionSpace] serverTrust];
       SecTrustResultType result;
-      SecTrustEvaluate(serverTrust, &result);
+//      SecTrustEvaluate(serverTrust, &result);
       
       if(result == kSecTrustResultProceed) {
         
