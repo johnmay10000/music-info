@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Rdio/Rdio.h>
 #import "MISession.h"
 @interface MIAppDelegate : UIResponder <UIApplicationDelegate>
 

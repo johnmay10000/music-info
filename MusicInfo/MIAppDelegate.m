@@ -8,6 +8,7 @@
 
 #import "MIAppDelegate.h"
 
+
 @implementation MIAppDelegate
 
 @synthesize window = _window;
@@ -15,10 +16,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    MISession *session = [[MISession alloc] init];
-    
+    MISession *session = [[MISession alloc] init];    
     [session start];
     [session searchFor:@"bee mask" withType:@"artist"];
+    
+
+    Rdio *rdio = [[Rdio alloc] initWithConsumerKey:@"8sgrekyj2xeu94uzjxqjcfyf" andSecret:@"3AdwHXvmNs" delegate:nil];
+    [rdio.player playSource:@"t2742133"];
+    
     return YES;
 }
 							

@@ -43,8 +43,8 @@
 		943C73BD14936D74003A4303 /* MIDiscogApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 943C73BB14936D74003A4303 /* MIDiscogApi.m */; };
 		9448728D14D80E0C000594B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448728C14D80E0C000594B7 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9448728E14D80E0C000594B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448728C14D80E0C000594B7 /* JSONKit.m */; };
-		94AFC01A16511DA4008937F4 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AFC01916511DA4008937F4 /* Rdio.framework */; };
-		94AFC01B16511DA4008937F4 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AFC01916511DA4008937F4 /* Rdio.framework */; };
+		9453ED45165131B800A73478 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453ED44165131B800A73478 /* Rdio.framework */; };
+		9453ED46165131B800A73478 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453ED44165131B800A73478 /* Rdio.framework */; };
 		94D2242314BC4D89002D24BD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241214BC4D89002D24BD /* NSData+Base64.m */; };
 		94D2242414BC4D89002D24BD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241214BC4D89002D24BD /* NSData+Base64.m */; };
 		94D2242514BC4D89002D24BD /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241414BC4D89002D24BD /* NSDate+RFC1123.m */; };
@@ -117,7 +117,7 @@
 		943C73BB14936D74003A4303 /* MIDiscogApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDiscogApi.m; sourceTree = "<group>"; };
 		9448728B14D80E0C000594B7 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		9448728C14D80E0C000594B7 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		94AFC01916511DA4008937F4 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
+		9453ED44165131B800A73478 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rdio.framework; path = MusicInfo/Rdio.framework; sourceTree = "<group>"; };
 		94D2241114BC4D89002D24BD /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		94D2241214BC4D89002D24BD /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		94D2241314BC4D89002D24BD /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				334255931420CF72003F0571 /* UIKit.framework in Frameworks */,
 				334255951420CF72003F0571 /* Foundation.framework in Frameworks */,
 				334255971420CF72003F0571 /* CoreGraphics.framework in Frameworks */,
-				94AFC01A16511DA4008937F4 /* Rdio.framework in Frameworks */,
+				9453ED45165131B800A73478 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 				334255BF1420CF72003F0571 /* SenTestingKit.framework in Frameworks */,
 				334255C01420CF72003F0571 /* UIKit.framework in Frameworks */,
 				334255C11420CF72003F0571 /* Foundation.framework in Frameworks */,
-				94AFC01B16511DA4008937F4 /* Rdio.framework in Frameworks */,
+				9453ED46165131B800A73478 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +190,7 @@
 		334255911420CF72003F0571 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94AFC01916511DA4008937F4 /* Rdio.framework */,
+				9453ED44165131B800A73478 /* Rdio.framework */,
 				9407E237165113F20009B902 /* Security.framework */,
 				9407E235165113D40009B902 /* CoreAudio.framework */,
 				94283A4E1494758600B75478 /* SystemConfiguration.framework */,
@@ -599,11 +599,12 @@
 		334255CD1420CF72003F0571 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -616,6 +617,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -625,16 +627,18 @@
 		334255CE1420CF72003F0571 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -649,10 +653,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/MusicInfo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				INFOPLIST_FILE = "MusicInfo/MusicInfo-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -664,10 +674,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/MusicInfo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
 				INFOPLIST_FILE = "MusicInfo/MusicInfo-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -681,6 +697,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/MusicInfo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
@@ -699,6 +716,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/MusicInfo\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicInfo/MusicInfo-Prefix.pch";
