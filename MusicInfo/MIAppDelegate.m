@@ -7,8 +7,6 @@
 //
 
 #import "MIAppDelegate.h"
-
-
 @implementation MIAppDelegate
 
 @synthesize window = _window;
@@ -20,9 +18,12 @@
     [session start];
     [session searchFor:@"bee mask" withType:@"artist"];
     
+    NSString *developerKey = @"8sgrekyj2xeu94uzjxqjcfyf";
+    NSString *developerSecret = @"3AdwHXvmNs";
+    
 
-    Rdio *rdio = [[Rdio alloc] initWithConsumerKey:@"8sgrekyj2xeu94uzjxqjcfyf" andSecret:@"3AdwHXvmNs" delegate:nil];
-    [rdio.player playSource:@"t2742133"];
+    _rdio = [[Rdio alloc] initWithConsumerKey:developerKey andSecret:developerSecret delegate:nil];
+    [_rdio.player playSource:@"t2742133"];
     
     return YES;
 }

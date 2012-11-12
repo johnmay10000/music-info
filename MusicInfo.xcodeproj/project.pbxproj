@@ -43,8 +43,6 @@
 		943C73BD14936D74003A4303 /* MIDiscogApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 943C73BB14936D74003A4303 /* MIDiscogApi.m */; };
 		9448728D14D80E0C000594B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448728C14D80E0C000594B7 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9448728E14D80E0C000594B7 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448728C14D80E0C000594B7 /* JSONKit.m */; };
-		9453ED45165131B800A73478 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453ED44165131B800A73478 /* Rdio.framework */; };
-		9453ED46165131B800A73478 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453ED44165131B800A73478 /* Rdio.framework */; };
 		94D2242314BC4D89002D24BD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241214BC4D89002D24BD /* NSData+Base64.m */; };
 		94D2242414BC4D89002D24BD /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241214BC4D89002D24BD /* NSData+Base64.m */; };
 		94D2242514BC4D89002D24BD /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241414BC4D89002D24BD /* NSDate+RFC1123.m */; };
@@ -61,6 +59,9 @@
 		94D2243014BC4D89002D24BD /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2241F14BC4D89002D24BD /* MKNetworkOperation.m */; };
 		94D2243114BC4D89002D24BD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2242214BC4D89002D24BD /* Reachability.m */; };
 		94D2243214BC4D89002D24BD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2242214BC4D89002D24BD /* Reachability.m */; };
+		94FBFA7F165137BB00718405 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA7E165137BB00718405 /* AudioToolbox.framework */; };
+		94FBFA811651383100718405 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA801651383100718405 /* Rdio.framework */; };
+		94FBFA821651383100718405 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA801651383100718405 /* Rdio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +118,6 @@
 		943C73BB14936D74003A4303 /* MIDiscogApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDiscogApi.m; sourceTree = "<group>"; };
 		9448728B14D80E0C000594B7 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		9448728C14D80E0C000594B7 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		9453ED44165131B800A73478 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rdio.framework; path = MusicInfo/Rdio.framework; sourceTree = "<group>"; };
 		94D2241114BC4D89002D24BD /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		94D2241214BC4D89002D24BD /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		94D2241314BC4D89002D24BD /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -135,6 +135,8 @@
 		94D2241F14BC4D89002D24BD /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
 		94D2242114BC4D89002D24BD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		94D2242214BC4D89002D24BD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		94FBFA7E165137BB00718405 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		94FBFA801651383100718405 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FBFA7F165137BB00718405 /* AudioToolbox.framework in Frameworks */,
 				9407E238165113F20009B902 /* Security.framework in Frameworks */,
 				9407E236165113D40009B902 /* CoreAudio.framework in Frameworks */,
 				94283A4F1494758600B75478 /* SystemConfiguration.framework in Frameworks */,
@@ -150,7 +153,7 @@
 				334255931420CF72003F0571 /* UIKit.framework in Frameworks */,
 				334255951420CF72003F0571 /* Foundation.framework in Frameworks */,
 				334255971420CF72003F0571 /* CoreGraphics.framework in Frameworks */,
-				9453ED45165131B800A73478 /* Rdio.framework in Frameworks */,
+				94FBFA811651383100718405 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +164,7 @@
 				334255BF1420CF72003F0571 /* SenTestingKit.framework in Frameworks */,
 				334255C01420CF72003F0571 /* UIKit.framework in Frameworks */,
 				334255C11420CF72003F0571 /* Foundation.framework in Frameworks */,
-				9453ED46165131B800A73478 /* Rdio.framework in Frameworks */,
+				94FBFA821651383100718405 /* Rdio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +193,8 @@
 		334255911420CF72003F0571 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9453ED44165131B800A73478 /* Rdio.framework */,
+				94FBFA801651383100718405 /* Rdio.framework */,
+				94FBFA7E165137BB00718405 /* AudioToolbox.framework */,
 				9407E237165113F20009B902 /* Security.framework */,
 				9407E235165113D40009B902 /* CoreAudio.framework */,
 				94283A4E1494758600B75478 /* SystemConfiguration.framework */,
@@ -604,7 +608,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -632,7 +636,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/MusicInfo\"";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -650,6 +654,7 @@
 		334255D01420CF72003F0571 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -671,6 +676,7 @@
 		334255D11420CF72003F0571 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
