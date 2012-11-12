@@ -3,7 +3,7 @@
 //  MKNetworkKit
 //
 //  Created by Mugunth Kumar (@mugunthkumar) on 11/11/11.
-//  Copyright (C) 2011-2020 by Steinlogic
+//  Copyright (C) 2011-2020 by Steinlogic Consulting and Training Pte Ltd
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,7 @@ typedef enum {
   MKNetworkOperationStateFinished = 3
 } MKNetworkOperationState;
 
+typedef void (^MKNKVoidBlock)(void);
 typedef void (^MKNKProgressBlock)(double progress);
 typedef void (^MKNKResponseBlock)(MKNetworkOperation* completedOperation);
 #if TARGET_OS_IPHONE
@@ -38,6 +39,7 @@ typedef void (^MKNKImageBlock) (UIImage* fetchedImage, NSURL* url, BOOL isInCach
 #elif TARGET_OS_MAC
 typedef void (^MKNKImageBlock) (NSImage* fetchedImage, NSURL* url, BOOL isInCache);
 #endif
+typedef void (^MKNKResponseErrorBlock)(MKNetworkOperation* completedOperation, NSError* error);
 typedef void (^MKNKErrorBlock)(NSError* error);
 
 typedef void (^MKNKAuthBlock)(NSURLAuthenticationChallenge* challenge);
@@ -84,7 +86,7 @@ typedef enum {
  *  This property is readonly cannot be updated. 
  *  To create an operation with a specific URL, use the operationWithURLString:params:httpMethod: 
  */
-@property (nonatomic, readonly) NSString *url;
+@property (nonatomic, copy, readonly) NSString *url;
 
 /*!
  *  @abstract The internal request object
@@ -120,7 +122,7 @@ typedef enum {
  *  @seealso
  *   addHeaders:
  */
-@property (nonatomic, strong, readonly) NSDictionary *readonlyPostDictionary;
+@property (nonatomic, copy, readonly) NSDictionary *readonlyPostDictionary;
 
 /*!
  *  @abstract The internal request object's method type
@@ -131,7 +133,7 @@ typedef enum {
  *  This property is readonly cannot be modified. 
  *  To create an operation with a new method type, use the operationWithURLString:params:httpMethod: 
  */
-@property (nonatomic, strong, readonly) NSString *HTTPMethod;
+@property (nonatomic, copy, readonly) NSString *HTTPMethod;
 
 /*!
  *  @abstract The internal response object's status code
@@ -175,7 +177,6 @@ typedef enum {
  *  @seealso
  *  postDataEncoding
  */
-
 -(void) setCustomPostDataEncodingHandler:(MKNKEncodingBlock) postDataEncodingHandler forType:(NSString*) contentType;
 
 /*!
@@ -245,7 +246,7 @@ typedef enum {
  *  @discussion
  *	If your request needs to be authenticated using a client certificate, set the certificate path here
  */
-@property (strong, nonatomic) NSString *clientCertificate;
+@property (copy, nonatomic) NSString *clientCertificate;
 
 /*!
  *  @abstract Custom authentication handler
@@ -286,6 +287,7 @@ typedef enum {
  *  set this parameter to a UILocalNotification object
  */
 @property (nonatomic, strong) UILocalNotification *localNotification;
+
 /*!
  *  @abstract Shows a local notification when an error occurs
  *  @property shouldShowLocalNotificationOnError
@@ -323,7 +325,7 @@ typedef enum {
  *  Example
  *  [op setToken:@"abracadabra" forAuthType:@"Token"] will set the header value to 
  *  "Authorization: Token abracadabra"
- 
+ * 
  *  @seealso
  *  setUsername:password:basicAuth:
  *  addHeaders:
@@ -379,11 +381,36 @@ typedef enum {
  *	This method sets your completion and error blocks. If your operation's response data was previously called,
  *  the completion block will be called almost immediately with the cached response. You can check if the completion 
  *  handler was invoked with a cached data or with real data by calling the isCachedResponse method.
+ *  This method is deprecated in favour of addCompletionHandler:errorHandler: that returns the completedOperation in the error block as well.
+ *  While I will still continue to support this method, I'll remove it completely in a future release.
  *
  *  @seealso
  *  isCachedResponse
+ *  addCompletionHandler:errorHandler:
  */
--(void) onCompletion:(MKNKResponseBlock) response onError:(MKNKErrorBlock) error;
+-(void) onCompletion:(MKNKResponseBlock) response onError:(MKNKErrorBlock) error DEPRECATED_ATTRIBUTE;
+
+/*!
+ *  @abstract adds a block Handler for completion and error
+ *
+ *  @discussion
+ *	This method sets your completion and error blocks. If your operation's response data was previously called,
+ *  the completion block will be called almost immediately with the cached response. You can check if the completion
+ *  handler was invoked with a cached data or with real data by calling the isCachedResponse method.
+ *
+ *  @seealso
+ *  onCompletion:onError:
+ */
+-(void) addCompletionHandler:(MKNKResponseBlock) response errorHandler:(MKNKResponseErrorBlock) error;
+
+/*!
+ *  @abstract Block Handler for tracking 304 not modified state
+ *
+ *  @discussion
+ *	This method will be called if the server sends a 304 HTTP status for your request.
+ *
+ */
+-(void) onNotModified:(MKNKVoidBlock) notModifiedBlock;
 
 /*!
  *  @abstract Block Handler for tracking upload progress
@@ -491,6 +518,7 @@ typedef enum {
  */
 #if TARGET_OS_IPHONE
 -(UIImage*) responseImage;
+-(void) decompressedResponseImageOfSize:(CGSize) size completionHandler:(void (^)(UIImage *decompressedImage)) imageDecompressionHandler;
 #elif TARGET_OS_MAC
 -(NSImage*) responseImage;
 -(NSXMLDocument*) responseXML;
@@ -542,6 +570,6 @@ typedef enum {
 -(NSString*) uniqueIdentifier;
 
 - (id)initWithURLString:(NSString *)aURLString
-                 params:(NSMutableDictionary *)params
+                 params:(NSDictionary *)params
              httpMethod:(NSString *)method;
 @end

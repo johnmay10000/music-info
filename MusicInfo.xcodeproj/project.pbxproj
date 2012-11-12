@@ -27,6 +27,8 @@
 		334255C91420CF72003F0571 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 334255C71420CF72003F0571 /* InfoPlist.strings */; };
 		334255CC1420CF72003F0571 /* MusicInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 334255CB1420CF72003F0571 /* MusicInfoTests.m */; };
 		334255FD1420D6F5003F0571 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */; };
+		9407E236165113D40009B902 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9407E235165113D40009B902 /* CoreAudio.framework */; };
+		9407E238165113F20009B902 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9407E237165113F20009B902 /* Security.framework */; };
 		9414A43A1568BCB9000D3D8B /* MIDiscogsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9414A4391568BCB9000D3D8B /* MIDiscogsResult.m */; };
 		9414A43B1568BCB9000D3D8B /* MIDiscogsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 9414A4391568BCB9000D3D8B /* MIDiscogsResult.m */; };
 		9414A44E1568E6B2000D3D8B /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9414A44D1568E6B2000D3D8B /* NSString+URLEncoding.m */; };
@@ -97,6 +99,8 @@
 		334255CA1420CF72003F0571 /* MusicInfoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicInfoTests.h; sourceTree = "<group>"; };
 		334255CB1420CF72003F0571 /* MusicInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicInfoTests.m; sourceTree = "<group>"; };
 		334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		9407E235165113D40009B902 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9407E237165113F20009B902 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9414A4381568BCB9000D3D8B /* MIDiscogsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDiscogsResult.h; sourceTree = "<group>"; };
 		9414A4391568BCB9000D3D8B /* MIDiscogsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDiscogsResult.m; sourceTree = "<group>"; };
 		9414A44C1568E6B2000D3D8B /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9407E238165113F20009B902 /* Security.framework in Frameworks */,
+				9407E236165113D40009B902 /* CoreAudio.framework in Frameworks */,
 				94283A4F1494758600B75478 /* SystemConfiguration.framework in Frameworks */,
 				94283A4D1494752800B75478 /* CFNetwork.framework in Frameworks */,
 				334255FD1420D6F5003F0571 /* libz.1.1.3.dylib in Frameworks */,
@@ -179,6 +185,8 @@
 		334255911420CF72003F0571 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9407E237165113F20009B902 /* Security.framework */,
+				9407E235165113D40009B902 /* CoreAudio.framework */,
 				94283A4E1494758600B75478 /* SystemConfiguration.framework */,
 				94283A4C1494752800B75478 /* CFNetwork.framework */,
 				334255FC1420D6F5003F0571 /* libz.1.1.3.dylib */,
@@ -240,6 +248,13 @@
 				334255C71420CF72003F0571 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9407E23116510F870009B902 /* Mog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mog;
 			sourceTree = "<group>";
 		};
 		940B021014556AFC008912D5 /* Network */ = {
@@ -359,6 +374,7 @@
 		94FEE69B1452D13600D519A3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9407E23116510F870009B902 /* Mog */,
 				9414A45415691A9C000D3D8B /* Spotify */,
 				9414A45315691A7E000D3D8B /* Songly */,
 				9414A452156919F8000D3D8B /* Bandcamp */,
