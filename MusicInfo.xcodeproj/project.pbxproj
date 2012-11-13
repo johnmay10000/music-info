@@ -62,6 +62,8 @@
 		94FBFA7F165137BB00718405 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA7E165137BB00718405 /* AudioToolbox.framework */; };
 		94FBFA811651383100718405 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA801651383100718405 /* Rdio.framework */; };
 		94FBFA821651383100718405 /* Rdio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FBFA801651383100718405 /* Rdio.framework */; };
+		94FBFA891652692100718405 /* MIRdioApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FBFA881652692100718405 /* MIRdioApi.m */; };
+		94FBFA8A1652692100718405 /* MIRdioApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FBFA881652692100718405 /* MIRdioApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		94D2242214BC4D89002D24BD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		94FBFA7E165137BB00718405 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		94FBFA801651383100718405 /* Rdio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Rdio.framework; sourceTree = "<group>"; };
+		94FBFA871652692100718405 /* MIRdioApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRdioApi.h; sourceTree = "<group>"; };
+		94FBFA881652692100718405 /* MIRdioApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRdioApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +311,8 @@
 		9414A451156919C5000D3D8B /* Rdio */ = {
 			isa = PBXGroup;
 			children = (
+				94FBFA871652692100718405 /* MIRdioApi.h */,
+				94FBFA881652692100718405 /* MIRdioApi.m */,
 			);
 			name = Rdio;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				9414A43A1568BCB9000D3D8B /* MIDiscogsResult.m in Sources */,
 				9414A44E1568E6B2000D3D8B /* NSString+URLEncoding.m in Sources */,
 				9414A45715691AF4000D3D8B /* MISoundcloudApi.m in Sources */,
+				94FBFA891652692100718405 /* MIRdioApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +558,7 @@
 				9414A43B1568BCB9000D3D8B /* MIDiscogsResult.m in Sources */,
 				9414A44F1568E6B2000D3D8B /* NSString+URLEncoding.m in Sources */,
 				9414A45815691AF4000D3D8B /* MISoundcloudApi.m in Sources */,
+				94FBFA8A1652692100718405 /* MIRdioApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

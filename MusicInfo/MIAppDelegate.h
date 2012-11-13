@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Rdio/Rdio.h>
 #import "MISession.h"
 @interface MIAppDelegate : UIResponder <UIApplicationDelegate> {
-//    Rdio *rdio;
+
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (readonly) Rdio *rdio;
+@property (nonatomic, strong) MISession *session;
 @end

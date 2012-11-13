@@ -14,17 +14,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    MISession *session = [[MISession alloc] init];    
-    [session start];
-    [session searchFor:@"bee mask" withType:@"artist"];
-    
-    NSString *developerKey = @"8sgrekyj2xeu94uzjxqjcfyf";
-    NSString *developerSecret = @"3AdwHXvmNs";
-    
-
-    _rdio = [[Rdio alloc] initWithConsumerKey:developerKey andSecret:developerSecret delegate:nil];
-    [_rdio.player playSource:@"t2742133"];
-    
+    _session = [[MISession alloc] init];
+    [_session start];
+    [_session searchFor:@"bee mask" withType:@"artist"];
     return YES;
 }
 							

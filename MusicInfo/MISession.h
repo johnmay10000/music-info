@@ -10,11 +10,13 @@
 
 @class MIDiscogsApi;
 @class MISoundcloudApi;
+@class MIRdioApi;
 
 @interface MISession : NSObject
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) MIDiscogsApi *discogsApi;
 @property (nonatomic, strong) MISoundcloudApi *soundcloudApi;
+@property (nonatomic, strong) MIRdioApi *rdio;
 
 -(void)start;
 -(void)searchFor:(NSString *)searchString withType:(NSString *)searchType;
